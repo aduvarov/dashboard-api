@@ -4,23 +4,25 @@ const host = '127.0.0.1'
 const port = 8000
 const app = express()
 
-app.all('/hello', (req, res, next) => {
-    console.log('All')
-    next()
+app.get('/hello', (req, res) => {
+    // res.status(201).json({ success: true })
+    // res.download('/test.pdf', 'tssst.pdf')
+    // res.redirect(301, 'https://example.com')
+    res.cookie('token', 'asdfasdfasdf', {
+        domain: 'devlab.kz',
+        path: '/',
+        secure: true,
+    })
+    res.location('')
+    res.links({
+        next: 'asdf',
+    })
+    res.clearCookie('token')
+    res.set('Content-Type', 'text/plain')
+    res.type('application/json')
+    res.append('Warning', 666)
+    res.send('Привет')
 })
-
-const cb = (req, res, next) => {
-    console.log('CB1')
-    next()
-}
-
-app.route('/user')
-    .get(cb, (req, res) => {
-        res.send('Привет')
-    })
-    .post((req, res) => {
-        res.send('Привет POST!')
-    })
 
 app.listen(port, () => {
     console.log(`Сервер запущен на ${host}:${port}`)
