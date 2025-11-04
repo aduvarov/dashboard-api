@@ -16,6 +16,7 @@
         "esModuleInterop": true,
         "strict": true,
         "strictPropertyInitialization": false,
+        "strictNullChecks": false,
         "jsx": "react-jsx",
         "verbatimModuleSyntax": false,
         "isolatedModules": true,
