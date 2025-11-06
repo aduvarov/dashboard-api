@@ -9,7 +9,7 @@
 		"lint": "eslint ./src/**",
 		"lint:fix": "eslint ./src/** --fix",
 		"build": "tsc",
-		"dev": "nodemon dist/main.js"
+		"dev": "nodemon"
 	},
 	"keywords": [],
 	"author": "Anatoliy D. Uvarov",
@@ -24,6 +24,7 @@
 		"eslint-plugin-prettier": "^5.5.4",
 		"nodemon": "^3.1.10",
 		"prettier": "^3.6.2",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3"
 	},
 	"dependencies": {
