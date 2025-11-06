@@ -1,26 +1,35 @@
 {
-    "name": "dashboard-api",
-    "version": "0.0.1",
-    "description": "API для учебного проекта",
-    "main": "index.js",
-    "type": "commonjs",
-    "scripts": {
-        "start": "node dist/main.js",
-        "build": "tsc",
-        "dev": "nodemon dist/main.js"
-    },
-    "keywords": [],
-    "author": "Anatoliy D. Uvarov",
-    "license": "ISC",
-    "devDependencies": {
-        "@types/express": "^5.0.5",
-        "@types/node": "^24.9.2",
-        "nodemon": "^3.1.10"
-    },
-    "dependencies": {
-        "express": "^5.1.0",
-        "inversify": "^7.10.4",
-        "reflect-metadata": "^0.2.2",
-        "tslog": "^3.2.2"
-    }
+	"name": "dashboard-api",
+	"version": "0.0.1",
+	"description": "API для учебного проекта",
+	"main": "index.js",
+	"type": "commonjs",
+	"scripts": {
+		"start": "node dist/main.js",
+		"lint": "eslint ./src/**",
+		"lint:fix": "eslint ./src/** --fix",
+		"build": "tsc",
+		"dev": "nodemon dist/main.js"
+	},
+	"keywords": [],
+	"author": "Anatoliy D. Uvarov",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/express": "^5.0.5",
+		"@types/node": "^24.9.2",
+		"@typescript-eslint/eslint-plugin": "^8.46.3",
+		"@typescript-eslint/parser": "^8.46.3",
+		"eslint": "^9.39.1",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
+		"nodemon": "^3.1.10",
+		"prettier": "^3.6.2",
+		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"express": "^5.1.0",
+		"inversify": "^7.10.4",
+		"reflect-metadata": "^0.2.2",
+		"tslog": "^3.2.2"
+	}
 }
