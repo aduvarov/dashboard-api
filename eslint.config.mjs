@@ -37,7 +37,7 @@ export default defineConfig([
 			'@typescript-eslint/no-unused-vars': ['off'],
 			'@typescript-eslint/explicit-function-return-type': ['warn'],
 			'@typescript-eslint/no-explicit-any': 'off',
-
+			'@typescript-eslint/no-empty-object-type': 'warn',
 			'prettier/prettier': [
 				'error',
 				{

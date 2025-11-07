@@ -6,9 +6,8 @@ import { TYPES } from '../types';
 import { ILogger } from '../logger/logger.interface';
 import 'reflect-metadata';
 import { IUsersController } from './users.controller.interface';
-
-class User {}
-const users = [];
+import { UserLoginDto } from './dto/user-login.dto';
+import { UserRegisterDto } from './dto/user-register.dto';
 
 @injectable()
 export class UsersController extends BaseController implements IUsersController {
@@ -19,11 +18,12 @@ export class UsersController extends BaseController implements IUsersController 
 			{ path: '/login', func: this.login, method: 'post' },
 		]);
 	}
-	login(req: Request, res: Response, next: NextFunction): void {
-		users.push(new User());
+	login(req: Request<object, object, UserLoginDto>, res: Response, next: NextFunction): void {
+		console.log(req.body);
 		next(new HTTPError(401, 'ошибка авторизации', 'login'));
 	}
-	register(req: Request, res: Response, next: NextFunction): void {
+	register(req: Request<object, object, UserRegisterDto>, res: Response, next: NextFunction): void {
+		console.log(req.body);
 		this.ok(res, 'Register');
 	}
 }
