@@ -10,7 +10,8 @@
 		"lint:fix": "eslint ./src/** --fix",
 		"build": "tsc",
 		"dev": "nodemon",
-		"dev:inspect": "nodemon -e ts,json --exec node --inspect=localhost:9229 -r ts-node/register ./src/main.ts"
+		"dev:inspect": "nodemon -e ts,json --exec node --inspect=localhost:9229 -r ts-node/register ./src/main.ts",
+		"generate": "npx prisma generate"
 	},
 	"keywords": [],
 	"author": "Anatoliy D. Uvarov",
@@ -26,10 +27,12 @@
 		"eslint-plugin-prettier": "^5.5.4",
 		"nodemon": "^3.1.10",
 		"prettier": "^3.6.2",
+		"prisma": "^6.19.0",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3"
 	},
 	"dependencies": {
+		"@prisma/client": "^6.19.0",
 		"bcryptjs": "^3.0.3",
 		"class-transformer": "^0.5.1",
 		"class-validator": "^0.14.2",
