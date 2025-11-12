@@ -26,12 +26,25 @@ export class UsersController extends BaseController implements IUsersController 
 				method: 'post',
 				middlewares: [new ValidateMiddleware(UserRegisterDto)],
 			},
-			{ path: '/login', func: this.login, method: 'post' },
+			{
+				path: '/login',
+				func: this.login,
+				method: 'post',
+				middlewares: [new ValidateMiddleware(UserLoginDto)],
+			},
+			// { path: '/login', func: this.login, method: 'post' },
 		]);
 	}
-	login(req: Request<object, object, UserLoginDto>, res: Response, next: NextFunction): void {
-		console.log(req.body);
-		next(new HTTPError(401, 'ошибка авторизации', 'login'));
+	async login(
+		req: Request<object, object, UserLoginDto>,
+		res: Response,
+		next: NextFunction,
+	): Promise<void> {
+		const result = await this.userService.validateUser(req.body);
+		if (!result) {
+			return next(new HTTPError(401, 'ошибка авторизации', 'login'));
+		}
+		this.ok(res, {});
 	}
 	async register(
 		{ body }: Request<object, object, UserRegisterDto>,
