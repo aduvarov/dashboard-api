@@ -11,7 +11,8 @@
 		"build": "tsc",
 		"dev": "nodemon",
 		"dev:inspect": "nodemon -e ts,json --exec node --inspect=localhost:9229 -r ts-node/register ./src/main.ts",
-		"generate": "npx prisma generate"
+		"generate": "npx prisma generate",
+		"test": "jest"
 	},
 	"keywords": [],
 	"author": "Anatoliy D. Uvarov",
@@ -19,6 +20,7 @@
 	"devDependencies": {
 		"@types/bcryptjs": "^2.4.6",
 		"@types/express": "^5.0.5",
+		"@types/jest": "^30.0.0",
 		"@types/jsonwebtoken": "^9.0.10",
 		"@types/node": "^24.9.2",
 		"@typescript-eslint/eslint-plugin": "^8.46.3",
@@ -26,9 +28,11 @@
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-prettier": "^5.5.4",
+		"jest": "^30.2.0",
 		"nodemon": "^3.1.10",
 		"prettier": "^3.6.2",
 		"prisma": "^6.19.0",
+		"ts-jest": "^29.4.5",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3"
 	},
